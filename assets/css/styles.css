@@ -1,0 +1,274 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* color pallete */
+
+:root {
+  /* app colors */
+    --ui-base: #1E1E1E;
+
+    --ui-secondary: #2C2C2C;
+    --ui-secondary-lighter: #383838;
+
+    --brown-mustard: #725a3a;
+    --brown-mustard-lighter: #9b7a4e;
+
+    --danger: #bb3a56;
+    
+  /* text colors */
+    --text-primary: #ffffff;
+    --text-secondary: #9C9C9C;
+    --text-tertiary: #696969;
+
+}
+
+/* reusable */
+.flex {
+	display: flex;
+}
+.f0 {
+	flex-grow: 0;
+}
+.f1 {
+	flex-grow: 1;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+	display: grid;
+}
+/* Add styles here to customize the appearance of your app */
+
+.app {
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--ui-base);
+}
+
+.app-bar-window {
+  padding: 0;
+  width: 100%;
+  align-items: center;
+
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.app-title {
+  padding: 0 20px 5px 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.btn-window {
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--text-tertiary);
+
+  -webkit-app-region: no-drag;
+}
+/**/
+
+.btn-window.restore #restore {
+  display: none;
+}
+.btn-window.restore #maximize {
+  display: block;
+}
+.btn-window.maximized #restore {
+  display: block !important;
+}
+.btn-window.maximized #maximize {
+  display: none !important;
+}
+
+
+.btn-window:hover {
+  background-color: var(--ui-secondary-lighter);
+  color: var(--text-primary);
+  cursor: default;
+}
+.btn-window.btn-close:hover {
+  background-color: var(--danger);
+
+}
+
+.window-actions .btn-window {
+  float: left;
+}
+
+
+
+
+.app-display-content {
+  padding: 35px 20px 5px 20px;
+  height: 125px;
+  align-items: flex-end;
+  justify-content: end;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.main-number-text {
+  height: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  overflow: hidden;
+}
+.secondary-number-text {
+  height: 1.5rem;
+  margin-bottom: 3px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+  overflow: hidden;
+}
+
+.app-button-panel {
+  padding: 13px;
+
+	grid-template-columns: repeat(4, 1fr); 
+	grid-template-rows: repeat(5, 1fr); 
+	grid-template-areas: 
+	  "bar CE C Del"
+	  "num7 num8 num9 multiplication"
+	  "num4 num5 num6 subtract"
+	  "num1 num2 num3 add"
+	  "percent num0 comma equal"; 
+  }
+.bar { grid-area: bar; }
+.CE { grid-area: CE; }
+.C { grid-area: C; }
+.Del { grid-area: Del; }
+.num7 { grid-area: num7; }
+.num8 { grid-area: num8; }
+.num9 { grid-area: num9; }
+.num6 { grid-area: num6; }
+.num5 { grid-area: num5; }
+.num4 { grid-area: num4; }
+.num1 { grid-area: num1; }
+.num2 { grid-area: num2; }
+.num3 { grid-area: num3; }
+.num0 { grid-area: num0; }
+.percent { grid-area: percent; }
+.equal { grid-area: equal; }
+.comma { grid-area: comma; }
+.subtract { grid-area: subtract; }
+.add { grid-area: add; }
+.multiplication { grid-area: multiplication; }
+
+.key {
+  padding: 7px;
+
+}
+.btn {
+  background-color: var(--ui-secondary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 4px solid;
+  border-color: transparent;
+  outline: none;
+  transition: all ease 0.2s;
+  user-select: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--ui-secondary-lighter);
+}
+.btn:active {
+  transform: scale(0.95);
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 4px var(--brown-mustard);
+}
+
+.btn.btn-outline {
+  border-color: var(--ui-secondary);
+  background-color: transparent;
+}
+.btn.btn-outline:hover {
+  border-color: var(--ui-secondary-lighter);
+}
+
+.btn.btn-primary {
+  background-color: var(--brown-mustard);
+}
+.btn.btn-primary:hover {
+  background-color: var(--brown-mustard-lighter);
+}
+
+.key .btn {
+  width: 100%;
+  height: 100%;
+  font-size: 1.3rem;
+}

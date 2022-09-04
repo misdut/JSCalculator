@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    <script defer src="./assets/js/windowFunction.js"></script>
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="app flex">
+      <div class="app-bar-window f0 flex">
+        <h1 class="app-title f1">Calculadora</h1>
+        <div class="window-actions f0">
+          <button id="btnMinimize" class="btn-window" title="Minimize"><svg width="12" height="12" viewBox="0 0 23 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2H21" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+         </button>
+          <button id="btnRestoreMaximize" class="btn-window maximized" title="Maximize">
+            
+            <svg id="maximize" width="12" height="12" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 23V2H23V23H2Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+            <svg id="restore" width="12" height="12" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.36364 2H23V16.6364M2 8.36364V23H16.6364V8.36364H2Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              
+          </button>
+          <button id="btnClose" class="btn-window btn-close" title="Close"><svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 20L11 11M20 2L11 11M11 11L20 20M11 11L2 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+      </div>
+      <div class="app-content flex flex-column f1">
+        <div id="appDisplay" class="app-display-content flex flex-column f0">
+          <h2 id="previousNumber" class="secondary-number-text">6576*</h2>
+          <h2 id="currentNumber" class="main-number-text">676786</h2>
+        </div>
+        <div class="app-button-panel f1 grid">
+          <div class="key num0"><button class="btn number" id="0">0</button></div>
+          <div class="key num1"><button class="btn number" id="1">1</button></div>
+          <div class="key num2"><button class="btn number" id="2">2</button></div>
+          <div class="key num3"><button class="btn number" id="3">3</button></div>
+          <div class="key num4"><button class="btn number" id="4">4</button></div>
+          <div class="key num5"><button class="btn number" id="5">5</button></div>
+          <div class="key num6"><button class="btn number" id="6">6</button></div>
+          <div class="key num7"><button class="btn number" id="7">7</button></div>
+          <div class="key num8"><button class="btn number" id="8">8</button></div>
+          <div class="key num9"><button class="btn number" id="9">9</button></div>
+          <div class="key subtract"><button class="btn btn-outline operator" id="-">-</button></div>
+          <div class="key add"><button class="btn btn-outline operator" id="+">+</button></div>
+          <div class="key bar"><button class="btn btn-outline operator" id="/">&#247;</button></div>
+          <div class="key multiplication"><button class="btn btn-outline operator" id="*">&times;</button></div>
+          <div class="key percent"><button class="btn operator" id="%">%</button></div>
+          <div class="key comma"><button class="btn number" id="comma">,</button></div>
+          <div class="key C"><button class="btn btn-outline" id="C">C</button></div>
+          <div class="key CE"><button class="btn btn-outline" id="CE">CE</button></div>
+          <div class="key Del"><button class="btn btn-outline" id="Del">Del</button></div>
+          <div class="key equal"><button class="btn btn-primary" id="equals">=</button></div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/calculatorFeatures.js"></script>
+
+  </body>
+</html>
