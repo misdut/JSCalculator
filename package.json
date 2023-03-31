@@ -26,6 +26,6 @@
   "author": "Danielly",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^20.0.1"
+    "electron": "^23.2.1"
   }
 }
